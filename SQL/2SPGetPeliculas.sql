@@ -1,6 +1,6 @@
 CREATE PROCEDURE PeliculasGet
 AS
 BEGIN
-    SELECT id, nombre, idDirector
+    SELECT *
     FROM Peliculas;
 END;

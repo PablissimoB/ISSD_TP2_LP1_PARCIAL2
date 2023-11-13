@@ -1,6 +1,6 @@
 CREATE PROCEDURE DirectoresGet
 AS
 BEGIN
-    SELECT id, apellido, nombre
+    SELECT *
     FROM Directores;
 END;

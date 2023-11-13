@@ -3,6 +3,6 @@ CREATE PROCEDURE DirectorInsert
     @nombre VARCHAR(50)
 AS
 BEGIN
-    INSERT INTO Directores (apellido, nombre)
-    VALUES (@apellido, @nombre);
+    INSERT INTO Directores (apellido, nombre, activo)
+    VALUES (@apellido, @nombre, 1);
 END;
