@@ -25,13 +25,13 @@ namespace Presentacion
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormMateria form = new FormMateria();
+            FormPelicula form = new FormPelicula();
             form.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormAlumno form = new FormAlumno();
+            FormDirector form = new FormDirector();
             form.Show();
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace Clase05
 {
-    partial class FormMateria
+    partial class FormPelicula
     {
         /// <summary>
         ///  Required designer variable.

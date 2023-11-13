@@ -80,5 +80,25 @@ namespace Datos
                 throw;
             }
         }
+        public static void Update(string nombre, string apellido, int activo)
+        {
+            try
+            {
+                string conexion = System.Configuration.ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+                SqlConnection connection = new SqlConnection(conexion);
+                SqlCommand command = new SqlCommand("DirectorUpdate", connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@nombre", nombre);
+                command.Parameters.AddWithValue("@apellido", apellido);
+                command.Parameters.AddWithValue("@activo", activo);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

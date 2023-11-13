@@ -3,10 +3,10 @@ using Negocio;
 
 namespace Clase05
 {
-    public partial class FormMateria : Form
+    public partial class FormPelicula : Form
     {
         List<Pelicula> materiaList = new List<Pelicula>();
-        public FormMateria()
+        public FormPelicula()
         {
             InitializeComponent();
         }
@@ -26,8 +26,7 @@ namespace Clase05
                     Pelicula materiaSelected = (Pelicula)materiaBindingSource.Current;
                     if (materiaSelected != null)
                     {
-                        textBox1.Text = materiaSelected.descripcion.ToString();
-                        label1.Text = materiaSelected.id.ToString();
+                        
                     }
                     else { textBox1.Text = string.Empty; label1.Text = string.Empty; }
 
@@ -59,7 +58,7 @@ namespace Clase05
 
         private void button3_Click(object sender, EventArgs e)
         {
-            NPelicula.Insert(textBox2.Text);
+            
             materiaList = NPelicula.Get();
             materiaBindingSource.DataSource = materiaList;
         }
@@ -68,7 +67,7 @@ namespace Clase05
         {
             int id = int.Parse(label1.Text);
             string descripcion = textBox1.Text;
-            NPelicula.Update(id, descripcion);
+            
             materiaList = NPelicula.Get();
             materiaBindingSource.DataSource = materiaList;
         }
