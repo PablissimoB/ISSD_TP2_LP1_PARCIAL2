@@ -24,7 +24,7 @@ namespace Datos
             List<Pelicula> result = new List<Pelicula>();
             try
             {
-               
+              
             }
             catch (Exception)
             {

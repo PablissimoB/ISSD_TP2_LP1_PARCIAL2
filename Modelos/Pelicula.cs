@@ -8,7 +8,7 @@ namespace Modelos
 {
     public class Pelicula
     {
+        public int id { get; set; }
 
-        
     }
 }

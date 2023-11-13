@@ -1,5 +1,6 @@
 using Modelos;
 using Negocio;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace Clase05
 {
@@ -13,8 +14,8 @@ namespace Clase05
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            list = NPelicula.Get();
-            peliculaBindingSource.DataSource = list;
+            cargarGrilla();
+            cargarDirectores();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -23,12 +24,16 @@ namespace Clase05
             {
                 if (list.Count > 0)
                 {
-                    Pelicula materiaSelected = (Pelicula)peliculaBindingSource.Current;
-                    if (materiaSelected != null)
+                    Pelicula selected = (Pelicula)peliculaBindingSource.Current;
+                    if (selected != null)
                     {
+                        if (selected.id != 0)
+                        {
+                            
+                        }
 
                     }
-                    else { textBox1.Text = string.Empty; label1.Text = string.Empty; }
+                    else { textBox2.Text = string.Empty; label1.Text = string.Empty; }
 
                 }
             }
@@ -46,6 +51,21 @@ namespace Clase05
             directorBindingSource.DataSource = directores;
         }
 
+        private void cargarGrilla()
+        {
+            list = NPelicula.Get();
+            if(list.Count> 0)
+            {
+                dataGridView1.Visible = true;
+                peliculaBindingSource.DataSource = list;
+            }
+            else
+            {
+                dataGridView1.Visible = false;
+            }
+            
+            
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -56,32 +76,22 @@ namespace Clase05
                 MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
-                int id = int.Parse(label1.Text);
-                NPelicula.Delete(id);
-                list = NPelicula.Get();
-                peliculaBindingSource.DataSource = list;
+
+                cargarGrilla();
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
-            list = NPelicula.Get();
-            peliculaBindingSource.DataSource = list;
+            cargarGrilla();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(label1.Text);
-            string descripcion = textBox2.Text;
 
-            list = NPelicula.Get();
-            peliculaBindingSource.DataSource = list;
+            cargarGrilla();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

@@ -28,157 +28,173 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            dataGridView1 = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            directorBindingSource = new BindingSource(components);
-            textBox1 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            textBox2 = new TextBox();
-            button1 = new Button();
-            label3 = new Label();
-            button2 = new Button();
-            button3 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)directorBindingSource).BeginInit();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.directorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.directorBindingSource)).BeginInit();
+            this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3 });
-            dataGridView1.DataSource = directorBindingSource;
-            dataGridView1.Location = new Point(174, 213);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 72;
-            dataGridView1.RowTemplate.Height = 37;
-            dataGridView1.Size = new Size(542, 323);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dataGridView1.DataSource = this.directorBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(145, 178);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 72;
+            this.dataGridView1.RowTemplate.Height = 37;
+            this.dataGridView1.Size = new System.Drawing.Size(452, 269);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
-            dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            dataGridViewTextBoxColumn1.HeaderText = "id";
-            dataGridViewTextBoxColumn1.MinimumWidth = 9;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.Width = 175;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 9;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 175;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
-            dataGridViewTextBoxColumn2.HeaderText = "nombre";
-            dataGridViewTextBoxColumn2.MinimumWidth = 9;
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.Width = 175;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "nombre";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 9;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 175;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            dataGridViewTextBoxColumn3.DataPropertyName = "apellido";
-            dataGridViewTextBoxColumn3.HeaderText = "apellido";
-            dataGridViewTextBoxColumn3.MinimumWidth = 9;
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.Width = 175;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "apellido";
+            this.dataGridViewTextBoxColumn3.HeaderText = "apellido";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 9;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 175;
             // 
             // directorBindingSource
             // 
-            directorBindingSource.DataSource = typeof(Modelos.Director);
+            this.directorBindingSource.DataSource = typeof(Modelos.Director);
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(202, 84);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(175, 35);
-            textBox1.TabIndex = 1;
+            this.textBox1.Location = new System.Drawing.Point(168, 70);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(146, 31);
+            this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(100, 84);
-            label1.Name = "label1";
-            label1.Size = new Size(89, 30);
-            label1.TabIndex = 2;
-            label1.Text = "Nombre";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(83, 70);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nombre";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(510, 81);
-            label2.Name = "label2";
-            label2.Size = new Size(89, 30);
-            label2.TabIndex = 3;
-            label2.Text = "Apellido";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(425, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 25);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Apellido";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(605, 81);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(276, 35);
-            textBox2.TabIndex = 4;
+            this.textBox2.Location = new System.Drawing.Point(504, 68);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(231, 31);
+            this.textBox2.TabIndex = 4;
             // 
             // button1
             // 
-            button1.Location = new Point(975, 86);
-            button1.Name = "button1";
-            button1.Size = new Size(131, 40);
-            button1.TabIndex = 5;
-            button1.Text = "Alta";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            this.button1.Location = new System.Drawing.Point(812, 72);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 33);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Alta";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(108, 38);
-            label3.Name = "label3";
-            label3.Size = new Size(0, 30);
-            label3.TabIndex = 6;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(90, 32);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 25);
+            this.label3.TabIndex = 6;
             // 
             // button2
             // 
-            button2.Location = new Point(975, 144);
-            button2.Name = "button2";
-            button2.Size = new Size(131, 40);
-            button2.TabIndex = 7;
-            button2.Text = "Baja";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            this.button2.Location = new System.Drawing.Point(812, 120);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 33);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Baja";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            button3.Location = new Point(975, 213);
-            button3.Name = "button3";
-            button3.Size = new Size(131, 40);
-            button3.TabIndex = 8;
-            button3.Text = "Modificar";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            this.button3.Location = new System.Drawing.Point(812, 178);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(109, 33);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Modificar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // FormDirector
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1154, 756);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(label3);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(textBox1);
-            Controls.Add(dataGridView1);
-            Name = "FormDirector";
-            Text = "ABM Directores";
-            Load += FormAlumno_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)directorBindingSource).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(962, 630);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "FormDirector";
+            this.Text = "ABM Directores";
+            this.Load += new System.EventHandler(this.FormAlumno_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.directorBindingSource)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
