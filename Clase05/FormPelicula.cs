@@ -5,7 +5,7 @@ namespace Clase05
 {
     public partial class FormPelicula : Form
     {
-        List<Pelicula> materiaList = new List<Pelicula>();
+        List<Pelicula> list = new List<Pelicula>();
         public FormPelicula()
         {
             InitializeComponent();
@@ -13,20 +13,20 @@ namespace Clase05
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            materiaList = NPelicula.Get();
-            materiaBindingSource.DataSource = materiaList;
+            list = NPelicula.Get();
+            peliculaBindingSource.DataSource = list;
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             try
             {
-                if (materiaList.Count > 0)
+                if (list.Count > 0)
                 {
-                    Pelicula materiaSelected = (Pelicula)materiaBindingSource.Current;
+                    Pelicula materiaSelected = (Pelicula)peliculaBindingSource.Current;
                     if (materiaSelected != null)
                     {
-                        
+
                     }
                     else { textBox1.Text = string.Empty; label1.Text = string.Empty; }
 
@@ -40,6 +40,13 @@ namespace Clase05
 
         }
 
+        private void cargarDirectores()
+        {
+            List<Director> directores = NDirector.Get();
+            directorBindingSource.DataSource = directores;
+        }
+
+
         private void button2_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox
@@ -51,25 +58,25 @@ namespace Clase05
             {
                 int id = int.Parse(label1.Text);
                 NPelicula.Delete(id);
-                materiaList = NPelicula.Get();
-                materiaBindingSource.DataSource = materiaList;
+                list = NPelicula.Get();
+                peliculaBindingSource.DataSource = list;
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
-            materiaList = NPelicula.Get();
-            materiaBindingSource.DataSource = materiaList;
+
+            list = NPelicula.Get();
+            peliculaBindingSource.DataSource = list;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             int id = int.Parse(label1.Text);
-            string descripcion = textBox1.Text;
-            
-            materiaList = NPelicula.Get();
-            materiaBindingSource.DataSource = materiaList;
+            string descripcion = textBox2.Text;
+
+            list = NPelicula.Get();
+            peliculaBindingSource.DataSource = list;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

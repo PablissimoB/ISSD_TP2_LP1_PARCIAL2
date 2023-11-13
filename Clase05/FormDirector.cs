@@ -23,14 +23,14 @@ namespace Presentacion
         private void FormAlumno_Load(object sender, EventArgs e)
         {
             list = NDirector.Get();
-            bindingSource1.DataSource = list;
+            directorBindingSource.DataSource = list;
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             try
             {
-                var selected = (Director)bindingSource1.Current;
+                var selected = (Director)directorBindingSource.Current;
                 if (selected != null)
                 {
                     textBox1.Text = selected.nombre.ToString();
@@ -49,7 +49,17 @@ namespace Presentacion
         {
             NDirector.Insert(textBox1.Text, textBox2.Text);
             list = NDirector.Get();
-            bindingSource1.DataSource = list;
+            directorBindingSource.DataSource = list;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

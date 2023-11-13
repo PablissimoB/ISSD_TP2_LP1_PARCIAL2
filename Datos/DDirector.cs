@@ -24,7 +24,10 @@ namespace Datos
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    result = new Director(Convert.ToInt32(reader["id"]), reader["nombre"].ToString(), reader["apellido"].ToString());
+                    if (reader["activo"].ToString() == "1")
+                    {
+                        result = new Director(Convert.ToInt32(reader["id"]), reader["nombre"].ToString(), reader["apellido"].ToString());
+                    }
                 }
 
                 connection.Close();
@@ -48,10 +51,13 @@ namespace Datos
                 while (reader.Read())
                 {
                     Director director = new Director();
-                        director.id = Convert.ToInt32(reader["id"]);
-                        director.nombre = reader["nombre"].ToString();
-                        director.apellido = reader["apellido"].ToString();
+                    director.id = Convert.ToInt32(reader["id"]);
+                    director.nombre = reader["nombre"].ToString();
+                    director.apellido = reader["apellido"].ToString();
+                    if(reader["activo"].ToString() == "1")
+                    {
                         result.Add(director);
+                    }
                 }
                 connection.Close();
             }

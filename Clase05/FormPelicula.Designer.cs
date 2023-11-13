@@ -30,26 +30,24 @@
         {
             components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            descripcionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            materiaBindingSource = new BindingSource(components);
-            textBox1 = new TextBox();
+            peliculaBindingSource = new BindingSource(components);
             label1 = new Label();
-            label2 = new Label();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             textBox2 = new TextBox();
+            comboBox1 = new ComboBox();
+            directorBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)materiaBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)peliculaBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)directorBindingSource).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, descripcionDataGridViewTextBoxColumn });
-            dataGridView1.DataSource = materiaBindingSource;
+            dataGridView1.DataSource = peliculaBindingSource;
             dataGridView1.Location = new Point(19, 126);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
@@ -60,56 +58,22 @@
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
-            // idDataGridViewTextBoxColumn
+            // peliculaBindingSource
             // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            idDataGridViewTextBoxColumn.HeaderText = "id";
-            idDataGridViewTextBoxColumn.MinimumWidth = 9;
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            descripcionDataGridViewTextBoxColumn.HeaderText = "descripcion";
-            descripcionDataGridViewTextBoxColumn.MinimumWidth = 9;
-            descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            descripcionDataGridViewTextBoxColumn.Width = 250;
-            // 
-            // materiaBindingSource
-            // 
-            materiaBindingSource.DataSource = typeof(Modelos.Pelicula);
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(967, 154);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(278, 35);
-            textBox1.TabIndex = 1;
+            peliculaBindingSource.DataSource = typeof(Modelos.Pelicula);
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(801, 126);
             label1.Name = "label1";
-            label1.Size = new Size(36, 30);
+            label1.Size = new Size(0, 30);
             label1.TabIndex = 2;
-            label1.Text = "Id:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(801, 170);
-            label2.Margin = new Padding(5, 0, 5, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(121, 30);
-            label2.TabIndex = 3;
-            label2.Text = "Descripcion";
+            label1.Visible = false;
             // 
             // button1
             // 
-            button1.Location = new Point(802, 232);
+            button1.Location = new Point(967, 101);
             button1.Margin = new Padding(5, 6, 5, 6);
             button1.Name = "button1";
             button1.Size = new Size(129, 46);
@@ -120,7 +84,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(802, 290);
+            button2.Location = new Point(967, 186);
             button2.Margin = new Padding(5, 6, 5, 6);
             button2.Name = "button2";
             button2.Size = new Size(129, 46);
@@ -131,7 +95,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(622, 24);
+            button3.Location = new Point(963, 24);
             button3.Margin = new Padding(5, 6, 5, 6);
             button3.Name = "button3";
             button3.Size = new Size(129, 46);
@@ -148,25 +112,38 @@
             textBox2.Size = new Size(589, 35);
             textBox2.TabIndex = 7;
             // 
-            // FormMateria
+            // comboBox1
+            // 
+            comboBox1.DataSource = directorBindingSource;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(695, 29);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(212, 38);
+            comboBox1.TabIndex = 8;
+            // 
+            // directorBindingSource
+            // 
+            directorBindingSource.DataSource = typeof(Modelos.Director);
+            // 
+            // FormPelicula
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1267, 548);
+            Controls.Add(comboBox1);
             Controls.Add(textBox2);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox1);
             Controls.Add(dataGridView1);
             Margin = new Padding(3, 4, 3, 4);
-            Name = "FormMateria";
-            Text = "ABM Materias";
+            Name = "FormPelicula";
+            Text = "ABM Peliculas";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)materiaBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)peliculaBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)directorBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -174,15 +151,15 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private BindingSource materiaBindingSource;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private TextBox textBox1;
         private Label label1;
-        private Label label2;
         private Button button1;
         private Button button2;
         private Button button3;
         private TextBox textBox2;
+        private ComboBox comboBox1;
+        private BindingSource peliculaBindingSource;
+        private BindingSource directorBindingSource;
     }
 }

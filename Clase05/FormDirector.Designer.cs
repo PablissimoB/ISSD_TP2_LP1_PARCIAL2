@@ -30,10 +30,10 @@
         {
             components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            apellidoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            bindingSource1 = new BindingSource(components);
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            directorBindingSource = new BindingSource(components);
             textBox1 = new TextBox();
             label1 = new Label();
             label2 = new Label();
@@ -41,16 +41,17 @@
             button1 = new Button();
             label3 = new Label();
             button2 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)directorBindingSource).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, apellidoDataGridViewTextBoxColumn });
-            dataGridView1.DataSource = bindingSource1;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3 });
+            dataGridView1.DataSource = directorBindingSource;
             dataGridView1.Location = new Point(174, 213);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 72;
@@ -59,34 +60,33 @@
             dataGridView1.TabIndex = 0;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
-            // idDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            idDataGridViewTextBoxColumn.HeaderText = "id";
-            idDataGridViewTextBoxColumn.MinimumWidth = 9;
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.Width = 175;
+            dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            dataGridViewTextBoxColumn1.HeaderText = "id";
+            dataGridViewTextBoxColumn1.MinimumWidth = 9;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.Width = 175;
             // 
-            // nombreDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
-            nombreDataGridViewTextBoxColumn.MinimumWidth = 9;
-            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            nombreDataGridViewTextBoxColumn.Width = 175;
+            dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
+            dataGridViewTextBoxColumn2.HeaderText = "nombre";
+            dataGridViewTextBoxColumn2.MinimumWidth = 9;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.Width = 175;
             // 
-            // apellidoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
-            apellidoDataGridViewTextBoxColumn.HeaderText = "apellido";
-            apellidoDataGridViewTextBoxColumn.MinimumWidth = 9;
-            apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            apellidoDataGridViewTextBoxColumn.Width = 175;
+            dataGridViewTextBoxColumn3.DataPropertyName = "apellido";
+            dataGridViewTextBoxColumn3.HeaderText = "apellido";
+            dataGridViewTextBoxColumn3.MinimumWidth = 9;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.Width = 175;
             // 
-            // bindingSource1
+            // directorBindingSource
             // 
-            bindingSource1.AllowNew = false;
-            bindingSource1.DataSource = typeof(Modelos.Director);
+            directorBindingSource.DataSource = typeof(Modelos.Director);
             // 
             // textBox1
             // 
@@ -146,12 +146,24 @@
             button2.TabIndex = 7;
             button2.Text = "Baja";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
-            // FormAlumno
+            // button3
+            // 
+            button3.Location = new Point(975, 213);
+            button3.Name = "button3";
+            button3.Size = new Size(131, 40);
+            button3.TabIndex = 8;
+            button3.Text = "Modificar";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // FormDirector
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1154, 756);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(label3);
             Controls.Add(button1);
@@ -160,11 +172,11 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(dataGridView1);
-            Name = "FormAlumno";
-            Text = "FormAlumno";
+            Name = "FormDirector";
+            Text = "ABM Directores";
             Load += FormAlumno_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)directorBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -172,7 +184,6 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private BindingSource bindingSource1;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
@@ -183,5 +194,10 @@
         private Button button1;
         private Label label3;
         private Button button2;
+        private Button button3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private BindingSource directorBindingSource;
     }
 }
